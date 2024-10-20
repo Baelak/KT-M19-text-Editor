@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
-      title: 'J.A.T.E',
+      title: 'K.A.T.E',
     }),
     new WebpackPwaManifest({
       fingerprints: false,
