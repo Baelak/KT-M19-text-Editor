@@ -1,5 +1,5 @@
-const CACHE_NAME = 'jate-cache-v1';
-const DATA_CACHE_NAME = 'jate-data-cache-v1';
+const CACHE_NAME = 'kate-cache-v1';
+const DATA_CACHE_NAME = 'kate-data-cache-v1';
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
