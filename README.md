@@ -24,10 +24,10 @@
 This application is an API for a social network web app where users can share their thoughts, react to friends' thoughts, and create a friend list. It allows people to interact by adding friends, posting thoughts, and reacting to thought posts. They are able to create update and delete their accounts and thoughts, add and delete friends, and reactions.
 
 ## Application Walkthrough Video URL
-https://drive.google.com/file/d/12TP1-jtd9xIAc-h0q6LhpvRQyYGBV4iD/view?usp=drive_link
+
 
 ## Repository URL
-https://github.com/Baelak/KT-M18-social-Network-API
+https://github.com/Baelak/KT-M19-text-Editor
 
 ## Table of Contents
 * [Features](#features)
