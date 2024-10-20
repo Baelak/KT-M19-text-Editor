@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --config ./client/webpack.config.js",
     "server": "nodemon server.js",
     "install": "cd client && npm install",
     "client": "npm run start --prefix client",

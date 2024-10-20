@@ -1,14 +1,18 @@
+// Title: Webpack Configuration
+// Path: client/webpack.config.js
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
 module.exports = {
-  entry: './src/js/index.js',
+  // Correct entry point to the client folder
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  mode: 'development',
+  mode: 'production',
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
@@ -25,7 +29,7 @@ module.exports = {
       publicPath: '/',
       icons: [
         {
-          src: path.resolve('src/images/logo.png'),
+          src: path.resolve('src/images/logo.png'), // Ensure this path is correct
           sizes: [96, 128, 192, 256, 384, 512],
           destination: path.join('assets', 'icons'),
         },
