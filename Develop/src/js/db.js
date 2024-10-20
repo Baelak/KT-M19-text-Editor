@@ -1,21 +1,21 @@
 import { openDB } from 'idb';
 
 const initDb = async () => {
-  openDB('jate', 1, {
+  openDB('kate', 1, {
     upgrade(db) {
-      if (db.objectStoreNames.contains('jate')) {
-        console.log('jate database already exists');
+      if (db.objectStoreNames.contains('kate')) {
+        console.log('kate database already exists');
         return;
       }
-      db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
-      console.log('jate database created');
+      db.createObjectStore('kate', { keyPath: 'id', autoIncrement: true });
+      console.log('kate database created');
     },
   });
 };
 
 export const putDb = async (content) => {
-  const jateDb = await openDB('jate', 1);
-  const tx = jateDb.transaction('kate', 'readwrite');
+  const kateDb = await openDB('kate', 1);
+  const tx = kateDb.transaction('kate', 'readwrite');
   const store = tx.objectStore('kate');
   const request = store.put({ id: 1, value: content });
   const result = await request;
@@ -23,9 +23,9 @@ export const putDb = async (content) => {
 };
 
 export const getDb = async () => {
-  const jateDb = await openDB('jate', 1);
-  const tx = jateDb.transaction('jate', 'readonly');
-  const store = tx.objectStore('jate');
+  const kateDb = await openDB('kate', 1);
+  const tx = kateDb.transaction('kate', 'readonly');
+  const store = tx.objectStore('kate');
   const request = store.get(1);
   const result = await request;
   console.log('Data retrieved from the database', result);
