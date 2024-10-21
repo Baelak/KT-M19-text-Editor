@@ -24,7 +24,7 @@ butInstall.addEventListener('click', async () => {
     }
 
     // Show the install prompt
-    promptEvent.prompt();
+    promptEvent.alert();
 
     // Wait for the user to respond to the prompt
     const result = await promptEvent.userChoice;

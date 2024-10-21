@@ -23,8 +23,8 @@ export default class Editor {
       tabSize: 2,
     });
 
-    // When the editor is ready, set the value to whatever is stored in indexedDB.
-    // Fall back to localStorage if nothing is stored in indexedDB, and if neither is available, set the value to header.
+    // When the editor is ready, set the value to whatever is stored in IndexedDB.
+    // Fall back to localStorage if nothing is stored in IndexedDB, and if neither is available, set the value to header.
     getDb().then((data) => {
       console.info('Loaded data from IndexedDB, injecting into editor');
       this.editor.setValue(data || localData || header);
@@ -39,5 +39,16 @@ export default class Editor {
       console.log('The editor has lost focus');
       putDb(localStorage.getItem('content'));
     });
+
+    // Install button click handler
+    const installButton = document.getElementById('buttonInstall');
+    
+    if (installButton) {
+      installButton.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent the default action
+        console.log('Install button clicked');
+        // Add your PWA installation logic here
+      });
+    }
   }
 }

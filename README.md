@@ -20,10 +20,7 @@
 ![Github license](https://img.shields.io/badge/license-ISC-green.svg)
 
 ## Description
-This application is an API for a social network web app where users can share their thoughts, react to friends' thoughts, and create a friend list. It allows people to interact by adding friends, posting thoughts, and reacting to thought posts. They are able to create update and delete their accounts and thoughts, add and delete friends, and reactions.
-
-## Application Walkthrough Video URL
-
+This is a PWA that can be installed as a native app on your computer. It is a text editorapplication is an API for a social network web app where users can share their thoughts, react to friends' thoughts, and create a friend list. It allows people to interact by adding friends, posting thoughts, and reacting to thought posts. They are able to create update and delete their accounts and thoughts, add and delete friends, and reactions.
 
 ## Repository URL
 https://github.com/Baelak/KT-M19-text-Editor
