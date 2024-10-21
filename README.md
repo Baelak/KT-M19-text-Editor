@@ -1,10 +1,10 @@
-
   <div style="display: flex; justify-content: center; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 20px;">
   <img src="./Develop/client/src/images/generatedQR.png" alt="Logo" style="max-height: 200px; max-width: 200px;">
 </div>
 
 ## **Kaleab's Another Text Editor**
    
+    
                      __    ___   ____  ____________ 
                     /  / _/ _/  / _  |/_  __/ ____/
                    /  /_/_/    / /_| | / / / __/
