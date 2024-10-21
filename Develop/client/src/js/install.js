@@ -1,3 +1,5 @@
+// Develop/client/src/js/install.js
+
 const butInstall = document.getElementById('buttonInstall');
 
 // Logic for installing the PWA
@@ -33,6 +35,11 @@ butInstall.addEventListener('click', async () => {
 
     // Hide the install button
     butInstall.style.display = 'none';
+});
+
+// Prevent editor blur when clicking install button
+butInstall.addEventListener('mousedown', (event) => {
+    event.preventDefault();
 });
 
 // Add a handler for the `appinstalled` event

@@ -1,8 +1,6 @@
-// Title: Webpack Configuration
-// Path: client/webpack.config.js
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -18,6 +16,7 @@ module.exports = {
       template: './index.html',
       title: 'K.A.T.E',
     }),
+    new WorkboxPlugin.GenerateSW(), // Generates service worker with default caching settings
     new WebpackPwaManifest({
       fingerprints: false,
       name: "Kaleab's Another Text Editor",

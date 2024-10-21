@@ -1,5 +1,5 @@
 {
-  "name": "KATE",
+  "name": "K.A.T.E.",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "build": "webpack --mode production --config ./client/webpack.config.js",
     "server": "nodemon server.js",
     "install": "cd client && npm install",
-    "client": "npm run start --prefix client",
+    "client": "npm run build",
     "start:dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
