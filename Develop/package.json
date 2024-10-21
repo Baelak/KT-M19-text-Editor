@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node ./server/server.js",
     "build": "webpack --mode production --config ./client/webpack.config.js",
     "server": "nodemon server.js",
     "install": "cd client && npm install",
