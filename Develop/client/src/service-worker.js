@@ -1,3 +1,5 @@
+// Path: Develop/client/src/service-worker.js
+
 const CACHE_NAME = 'kate-cache-v1';
 const DATA_CACHE_NAME = 'kate-data-cache-v1';
 const FILES_TO_CACHE = [
@@ -13,6 +15,7 @@ const FILES_TO_CACHE = [
 self.addEventListener('install', (evt) => {
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
+      console.log('Files cached successfully');
       return cache.addAll(FILES_TO_CACHE);
     })
   );
@@ -26,6 +29,7 @@ self.addEventListener('activate', (evt) => {
       return Promise.all(
         keyList.map((key) => {
           if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+            console.log('Old cache removed:', key);
             return caches.delete(key);
           }
         })
@@ -35,7 +39,7 @@ self.addEventListener('activate', (evt) => {
   self.clients.claim();
 });
 
-// Fetch
+// Fetch requests
 self.addEventListener('fetch', (evt) => {
   if (evt.request.url.includes('/api/')) {
     evt.respondWith(
@@ -47,13 +51,12 @@ self.addEventListener('fetch', (evt) => {
             }
             return response;
           })
-          .catch(() => {
-            return cache.match(evt.request);
-          });
+          .catch(() => cache.match(evt.request));
       })
     );
     return;
   }
+  
   evt.respondWith(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.match(evt.request).then((response) => {
