@@ -20,7 +20,10 @@
 ![Github license](https://img.shields.io/badge/license-ISC-green.svg)
 
 ## Description
-This is a PWA that can be installed as a native app on your computer. It is a text editorapplication is an API for a social network web app where users can share their thoughts, react to friends' thoughts, and create a friend list. It allows people to interact by adding friends, posting thoughts, and reacting to thought posts. They are able to create update and delete their accounts and thoughts, add and delete friends, and reactions.
+Kaleab's Another Text Editor (K.A.T.E) is a Progressive Web Application that takes notes with JavaScript syntax highlighting and can be installed as a native app on your computer.
+
+## Deployed Application URL
+https://kt-m19-text-editor.onrender.com
 
 ## Repository URL
 https://github.com/Baelak/KT-M19-text-Editor
@@ -35,17 +38,20 @@ https://github.com/Baelak/KT-M19-text-Editor
 * [Questions](#questions)
 
 ## Features
-One useful feature of the project is the virtual counter which counts the number of reactions and friends of a user.
+One useful feature of this text editor is that it has a service worker that caches your progress and is saved on your browser so you are able to access your progress later on.
 
 ## Dependencies
-nodemon
+Nodemon, Express, Workbox, Webpack
 
 ## Languages and Technologies:
-**Javascript** is the language used, while the technologies used  are **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, and **Insomnia**.
+**Javascript**, and **HTML** are the language used, while the technologies used  are **Node.js**, **Express.js**, and **Render**.
 
 ## Screenshots
-<img src="./Develop/image/Users.png" alt="Users" style="max-height: 200px; max-width: 200px;">
-<img src="./Develop/image/Thoughts.png" alt="Thoughts" style="max-height: 200px; max-width: 200px;">
+<img src="./Develop/client/src/images/homepage.png" alt="Homepage" style="max-height: 200px; max-width: 200px;">
+<img src="./Develop/client/src/images/Installed.png" alt="Installed" style="max-height: 200px; max-width: 200px;">
+<img src="./Develop/client/src/images/Manifest.png" alt="Manifest" style="max-height: 200px; max-width: 200px;">
+<img src="./Develop/client/src/images/Service Worker.png" alt="Service Worker" style="max-height: 200px; max-width: 200px;">
+<img src="./Develop/client/src/images/IndexedDB Storage.png" alt="IndexedDB Storage" style="max-height: 200px; max-width: 200px;">
 
 ## Contributors
 None
