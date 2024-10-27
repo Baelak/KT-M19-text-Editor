@@ -6,6 +6,7 @@ import { getDb } from './db';
 export default class Editor {
   constructor() {
     const localData = localStorage.getItem('content');
+    this.deferredPrompt = null; // Variable to hold the deferred prompt
 
     // Check if CodeMirror is loaded
     if (typeof CodeMirror === 'undefined') {
@@ -40,6 +41,16 @@ export default class Editor {
       putDb(localStorage.getItem('content'));
     });
 
+    // Handle the beforeinstallprompt event
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent the mini-info bar from appearing on mobile
+      e.preventDefault();
+      // Stash the event so it can be triggered later
+      this.deferredPrompt = e;
+      // Show the install button
+      installButton.style.display = 'block';
+    });
+
     // Install button click handler
     const installButton = document.getElementById('buttonInstall');
     
@@ -47,7 +58,19 @@ export default class Editor {
       installButton.addEventListener('click', (e) => {
         e.preventDefault(); // Prevent the default action
         console.log('Install button clicked');
-        // Add your PWA installation logic here
+        // Show the install prompt
+        if (this.deferredPrompt) {
+          this.deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          this.deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the A2HS prompt');
+            } else {
+              console.log('User dismissed the A2HS prompt');
+            }
+            this.deferredPrompt = null; // Clear the deferred prompt
+          });
+        }
       });
     }
   }
